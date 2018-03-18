@@ -32,6 +32,11 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('/anamnesis/edit', 'AnamnesisController@edit')->name('anamnesis.edit');
 	Route::post('/anamnesis', 'AnamnesisController@store')->name('anamnesis.store');
 	Route::post('/anamnesis/update', 'AnamnesisController@update')->name('anamnesis.update');
+
+	Route::group(['prefix' => 'admin', 'middleware' => ['role:admin']], function () {
+		Route::get('/patients', 'PatientController@index')->name('patients.index');
+		Route::get('/patient/{patient}', 'PatientController@show')->name('patient.show');
+	});
 });
 
 

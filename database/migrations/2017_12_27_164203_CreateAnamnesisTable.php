@@ -15,12 +15,13 @@ class CreateAnamnesisTable extends Migration
     {
         Schema::create('anamnesis', function (Blueprint $table) {
             $table->increments('id');
-            $table->boolean('spine_op');
+            $table->string('spine_op');
             $table->text('medicine');
-            $table->integer('pain_intesitiy');
+            $table->string('localisation');
+            $table->string('pain_intensity');
             $table->string('pain_duration');
             $table->string('additional_pain_location');
-            $table->integer('walking_distance');
+            $table->string('walking_distance');
             $table->integer('user_id')->unsigned();
             $table->timestamps();
 

@@ -12,7 +12,7 @@ class Patientdata extends Model
      * @var array
      */
     protected $fillable = [
-        'firstname', 'lastname', 'address', 'mobilenumber', 'sex', 'svnr',
+        'firstname', 'lastname', 'address', 'mobilenumber', 'sex', 'svnr'
     ];
 
     protected $table = 'patientdata';

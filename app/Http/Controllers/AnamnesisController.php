@@ -73,7 +73,7 @@ class AnamnesisController extends Controller
     {
         $anamnesis = Auth::user()->anamnesis()->first();
 
-        if ($patientdata === null) {
+        if ($anamnesis === null) {
             return redirect('anamnesis/create');
         }
 

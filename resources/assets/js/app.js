@@ -1,22 +1,36 @@
 
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
 require('./bootstrap');
 
-window.Vue = require('vue');
+$(function() {
+	let $humanBody = $('#humanBody');
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+	if ($humanBody.length > 0) {
+		let $input = $('#localisation');
+		let localisation = $input.val() ? $input.val().split(',') : [];
 
-Vue.component('example-component', require('./components/ExampleComponent.vue'));
+		localisation.map(item => {
+			$('#' + item).addClass('active');
+		});
 
-const app = new Vue({
-    el: '#app'
+		$humanBody.on('click', 'path', function () {
+			let part = $(this).attr('id');
+			let index = localisation.indexOf(part);
+
+			if (index !== -1) {
+				localisation.splice(index, 1);
+			} else {
+				localisation.push(part);
+			}
+
+			$(this).toggleClass('active');
+
+			/*if (localisation.length > 0) {
+				$input.val(localisation.join());
+			} else {
+				$input.val(localisation[0]);
+			}*/
+
+			$input.val(localisation.length > 0 ? localisation.join() : localisation[0]);
+		});
+	}
 });

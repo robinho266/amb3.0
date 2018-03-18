@@ -24,17 +24,9 @@ class StorePatientdata extends FormRequest
     public function rules()
     {
         return [
-            'op' => 'required',
-            
-            
+            'svnr' => 'digits:10'
         ];
     }
 
-    public function messages()
-    {
-        return [
-            'op.required' => 'Bitte wählen Sie etwas aus.',
-            
-        ];
-    }
+    
 }

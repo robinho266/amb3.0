@@ -6,11 +6,12 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Srmklive\Authy\Auth\TwoFactor\Authenticatable as TwoFactorAuthenticatable;
 use Srmklive\Authy\Contracts\Auth\TwoFactor\Authenticatable as TwoFactorAuthenticatableContract;
+use Zizaco\Entrust\Traits\EntrustUserTrait;
 
 
 class User extends Authenticatable implements TwoFactorAuthenticatableContract
 {
-    use Notifiable, TwoFactorAuthenticatable;
+    use Notifiable, TwoFactorAuthenticatable, EntrustUserTrait;
 
     /**
      * The attributes that are mass assignable.

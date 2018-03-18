@@ -39,20 +39,6 @@
     	{{ Form::text('svnr', isset($patientdata) ? $patientdata->svnr : old('svnr'), ['class' => 'form-control']) }}
     </div>
 
-    <div class="form-group{{ $errors->has('op') ? ' has-error' : '' }}">
-        {{ Form::label('op', 'Wirbelsäulen OP', ['class' => 'control-label']) }}
-        <div class="radio">
-            <label>
-                <input type="radio" name="op" value="ja" @if(old('op') === 'ja' || (isset($patientdata) && $patientdata->op === 'ja'))checked="true"@endif>
-                Ja
-            </label>
-        </div>
-        <div class="radio">
-            <label>
-                <input type="radio" name="op" value="nein" @if(old('op') === 'nein' || (isset($patientdata) && $patientdata->op === 'nein'))checked="true"@endif>
-                Nein
-            </label>
-        </div>
-    </div>
+</div>
 
     {{ Form::submit('Ändern', ['class' => 'btn btn-danger']) }}

@@ -8,20 +8,16 @@
 <div class="col-lg-12 col-md-7">
                         <div class="card">
                             <div class="header">
-                                <h4 class="title">Patientendaten</h4>
-                            </div>
-                            <div class="content">
-                                <form>
-                                    <div class="row">
-
-										<form action="/store" enctype="multipart/form-data" method="post">
+                                <h4 class="title">Befunde:</h4><br>
+                                <form action="/store" enctype="multipart/form-data" method="post">
 											<input type="file" name="image">
 											<br> 
 											<input type="submit" name="Upload">
+											<br>
+											<br>
 										</form>
-									</div>
-								</form>	
-							</div>
+                            </div>
+                            	
 						</div>
 							
 @endsection

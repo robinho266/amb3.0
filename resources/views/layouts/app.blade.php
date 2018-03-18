@@ -47,12 +47,18 @@
                 </a>
             </div>
             <ul class="nav">
+                @role('admin')
                 <li class="nav-item">
-
+                    <a href="{{ route('patients.index') }}" class="nav-link"><i class="ti-files"></i>Patienten</a>
+                </li>
+                @else
+                <li class="nav-item">
                     <a href="#" class="nav-link"><i class="ti-files"></i>Meine Befunde</a>
                 </li>
                 <li><a href="{{ route('patientdata.show') }}"><i class="ti-clipboard"></i>Patientendaten</a></li>
+                <li><a href="{{ route('anamnesis.show') }}"><i class="ti-pencil-alt"></i>Anamneseformular</a></li>
                 <li><a href="{{ route('dataupload.show') }}"><i class="ti-export"></i>Befund hochladen</a></li>
+                @endrole
             </ul>
 
         </div>

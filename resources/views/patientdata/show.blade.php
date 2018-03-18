@@ -11,7 +11,7 @@
 
 @if ($patientdata === null) 
 	<div>
-		You didn't set your patient data yet. <a href="{{ route('patientdata.create') }}" class="btn btn-primary">Do it now!</a>
+		Sie haben Ihre Daten noch nicht eingegeben. <a href="{{ route('patientdata.create') }}" class="btn btn-primary">Do it now!</a>
 	</div>
 @else
 
@@ -29,8 +29,6 @@
                                         <tr>
                                             <td>Vorname:</td>
                                             <td>{{ $patientdata->firstname }}</td>
-                                            
-
                                             
                                         </tr>
                                         <tr>
@@ -58,74 +56,14 @@
                                             <td>{{ $patientdata->svnr }}</td>
                                            
                                         </tr>
-                                        <tr>
-                                            <td>Wirbelsäulen OP:</td>
-                                            <td>{{ $patientdata->op }}</td>
-                                           
-                                        </tr>
+                                       
                                     </tbody>
                                 </table>
 
                             </div>
                         </div>
 @endif
-<!--
-    <ul class="patientdata">
-    <li class="row">
-        <div class="col-md-2">
-            Vorname:
-        </div>
-        <div class="col-md-10">
-            {{ $patientdata->firstname }}
-        </div>
-    </li>
 
-    <li class="row">
-        <div class="col-md-2">
-            Nachname:
-        </div>
-        <div class="col-md-10">
-            {{ $patientdata->lastname }}
-        </div>
-    </li>
-
-    <li class="row">
-        <div class="col-md-2">
-            Adresse:
-        </div>
-        <div class="col-md-10">
-            {{ $patientdata->address }}
-        </div>
-    </li>
-
-    <li class="row">
-        <div class="col-md-2">
-            Telefonnummer:
-        </div>
-        <div class="col-md-10">
-            {{ $patientdata->mobilenumber }}
-        </div>
-    </li>
-
-    <li class="row">
-        <div class="col-md-2">
-            Geschlecht:
-        </div>
-        <div class="col-md-10">
-            {{ $patientdata->sex }}
-        </div>
-    </li>
-
-    <li class="row">
-        <div class="col-md-2">
-            SVNR:
-        </div>
-        <div class="col-md-10">
-            {{ $patientdata->svnr }}
-        </div>
-    </li>
-</ul>
--->
 
 
 @endsection
